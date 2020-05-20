@@ -1,10 +1,8 @@
 <template>
   <div>
-    
     <div class="user-info-wrapper">
       <div class="user-info">
         <div class="user-nick-name">{{ user.nickname }}</div>
-
         <div class="user-avatar-wrapper">
           <van-image name="user-avatar" round width="2rem" height="2rem" src="https://img.yzcdn.cn/vant/cat.jpeg"/>
         </div>
@@ -22,8 +20,14 @@
 import { Field,  Button, Image } from 'vant'
 import {mapGetters,mapActions} from 'vuex'
 import FooterTabbar from 'components/FooterTabbar'
+
 export default {
   name: 'User',
+  data () {
+    return {
+        title: '我的'
+    }
+  },
   computed:{
     user(){
       //返回获取到的数据
@@ -34,7 +38,8 @@ export default {
     [Field.name]: Field,
     [Button.name]: Button,
     [Image.name]: Image,
-     FooterTabbar,
+    FooterTabbar,
+
   }
 
 
@@ -71,7 +76,6 @@ export default {
 
 
         .user-avatar {
-          
           width: 40px;
           border-radius: 50%;
         }

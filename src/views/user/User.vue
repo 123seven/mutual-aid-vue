@@ -59,8 +59,6 @@ export default {
       // border-bottom: 1px solid #E9E9E9;
 
     .user-nick-name {
-        margin: 3px 10px;
-        padding: 15px 20px;
         font-size: 17px;
         font-weight: 500;
         color: #333;
@@ -73,7 +71,6 @@ export default {
         right: 0;
         top: 0;
    
-
 
         .user-avatar {
           width: 40px;

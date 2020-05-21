@@ -7,12 +7,13 @@
     </div>
     <div class="content">
       <van-form @submit="onSubmit">
-        <van-field v-model="username" name="用户名" label="用户名" placeholder="用户名" :rules="[{ required: true, message: '请填写用户名' }]"/>
+        <van-field v-model="username" name="邮箱" label="邮箱" placeholder="邮箱" :rules="[{ required: true, message: '请填写邮箱号码' }]"/>
         <van-field v-model="password" type="password" name="密码" label="密码" placeholder="密码" :rules="[{ required: true, message: '请填写密码' }]"/>
         <div style="margin: 16px;">
           <van-button   round block type="info"  native-type="submit">登录</van-button>
         </div>
       </van-form>
+      <router-link class="link" to="/register">没有账号？去注册</router-link>
     </div>
   </div>
 </template>
@@ -60,7 +61,13 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
+  }
+  .link{
+    display:block;
+    text-align: center;
+    color: #1989fa;
   }
 
 </style>

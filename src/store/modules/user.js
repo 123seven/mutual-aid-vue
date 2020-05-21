@@ -1,4 +1,4 @@
-import { login, getInfo } from 'api/user'
+import { login, getInfo, sendCode } from 'api/user'
 import { Toast } from 'vant'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
@@ -78,12 +78,35 @@ export default {
                         // eslint-disable-next-line
                         reject('Verification failed, please Login again.')
                     }
-                    commit(SetUserData, data)
                     resolve(data)
                 }).catch(error => {
                     reject(error)
                 })
             })
+        },
+
+        // 发送邮箱验证码
+        sendCode(state, data) {
+            try {
+                console.log('data', data)
+                let res = sendCode({
+                    email: data.email
+                })
+                console.log('send code', res)
+
+                Toast({
+                    message: '发送成功',
+                    position: 'middle',
+                    duration: 1500
+                })
+
+            } catch (error) {
+                Toast({
+                    message: error.message,
+                    position: 'middle',
+                    duration: 800
+                })
+            }
         }
     },
     getters: {
